@@ -171,6 +171,7 @@
     { "id" : SWC4, "name": "swc4", "timestep" : "monthly", "var" :  "SWC4", "long_name" :  "fractional saturation of soil water content in layer 4", "unit" : "1", "scale" : 1.0, "offset" : 0.0},
     { "id" : SWC5, "name": "swc5", "timestep" : "monthly", "var" :  "SWC5", "long_name" :  "fractional saturation of soil water content in layer 5", "unit" : "1", "scale" : 1.0, "offset" : 0.0},
     { "id" : ROOTMOIST, "name": "rootmoist", "timestep" : "monthly", "var" :  "rootmoist", "long_name" :  "root moisture", "unit" : "mm", "scale" : 1.0, "offset" : 0.0},
+    { "id" : ROOTMOIST_AGR, "name": "rootmoist_agr", "timestep" : "monthly", "var" :  "rootmoist_agr", "long_name" :  "root moisture for agricultural stands", "unit" : "", "scale" : 1.0, "offset" : 0.0},
     { "id" : CFT_SRAD, "name": "cft_srad", "timestep" : "annual", "var" :  "srad", "long_name" :  "CFT-specific shortwave downward radiation", "unit" : "W/m2", "scale" : 1.0, "offset" : 0.0},
     { "id" : CFT_ABOVEGBMC, "name": "cft_abovegbmc", "timestep" : "annual", "var" :  "aboveground_biomassc", "long_name" :  "CFT aboveground biomass", "unit" : "gC/m2", "scale" : 1.0, "offset" : 0.0},
     { "id" : CFT_ABOVEGBMN, "name": "cft_abovegbmn", "timestep" : "annual", "var" :  "aboveground_biomassn", "long_name" :  "CFT aboveground nitrogen", "unit" : "gN/m2", "scale" : 1.0, "offset" : 0.0},
@@ -361,5 +362,6 @@
     { "id" : DEFOREST_EMIS_N    ,"name": "deforest_emis_n", "timestep" : "annual", "var" : "deforest_emis_n", "long_name" : "nitrogen emissions from deforestation", "unit" : "gN/m2/yr", "scale" : 1.0, "offset" : 0.0},
     { "id" : PROD_TURNOVER_N    ,"name": "prod_turnover_n", "timestep" : "annual", "var" : "prod_turnover_n", "long_name" : "nitrogen emissions from product turnover", "unit" : "gN/m2/yr", "scale" : 1.0, "offset" : 0.0},
     { "id" : ESTAB_STORAGE_C, "name": "estab_storage_c", "timestep" : "annual", "var" :  "estab_storage_c", "long_name" :  "Carbon storage for establishment of agriculture trees and grasses", "unit" : "gC/m2", "scale" : 1.0, "offset" : 0.0},
-    { "id" : ESTAB_STORAGE_N, "name": "estab_storage_n", "timestep" : "annual", "var" :  "estab_storage_n", "long_name" :  "Nitrogen storage for establishment of agriculture trees and grasses", "unit" : "gN/m2", "scale" : 1.0, "offset" : 0.0}
+    { "id" : ESTAB_STORAGE_N, "name": "estab_storage_n", "timestep" : "annual", "var" :  "estab_storage_n", "long_name" :  "Nitrogen storage for establishment of agriculture trees and grasses", "unit" : "gN/m2", "scale" : 1.0, "offset" : 0.0},
+    { "id" : MANAGEMENT, "name": "management", "timestep": "annual", "var": "management decision (0: conventional tillage, 1: conservation tillage)", "long_name": "management", "unit": "-", "scale": 1.0, "offset": 0.0}
   ]

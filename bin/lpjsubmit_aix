@@ -76,7 +76,7 @@ then
 # @ arguments = \$LPJROOT/bin/lpjml $args -shared_memory yes -wait_mode poll -euilib "us"
 # @ queue
 EOF
-  llq -u $(whoami)
+  llq -u $USER
 else
   echo >&2 "Error in LPJ configuration, job not submitted"
   exit 1

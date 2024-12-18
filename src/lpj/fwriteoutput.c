@@ -1056,6 +1056,7 @@ void fwriteoutput(Outputfile *output,  /**< output file array */
   writeoutputvar(SWC4,ndate1);
   writeoutputvar(SWC5,ndate1);
   writeoutputvar(ROOTMOIST,ndate1);
+  writeoutputvar(ROOTMOIST_AGR,ndate1);
   writeoutputvar(IRRIG,1);
   writeoutputvar(RETURN_FLOW_B,1);
   writeoutputvar(EVAP_LAKE,1);
@@ -1131,6 +1132,7 @@ void fwriteoutput(Outputfile *output,  /**< output file array */
   writeoutputvar(LAKETEMP,ndate1);
   writeoutputshortvar(SDATE);
   writeoutputshortvar(HDATE);
+  writeoutputvar(MANAGEMENT,1);
   if(iswrite(output,CFT_SWC))
   {
     for(cell=0;cell<config->ngridcell;cell++)

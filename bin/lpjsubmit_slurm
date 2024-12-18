@@ -239,7 +239,7 @@ EOF
 echo "#SBATCH -J LPJmL$(cat $LPJROOT/VERSION)" >>slurm.jcf
 echo "#SBATCH --comment=\"LPJmL Version" $(cat $LPJROOT/VERSION) "args:" $args"\"" >>slurm.jcf
 cat <<EOF >>slurm.jcf
-#SBATCH --mail-user=$(whoami)
+#SBATCH --mail-user=$USER
 #SBATCH --mail-type=end
 EOF
 if [ "$wtime" != "" ]
@@ -293,7 +293,7 @@ EOF
     then
       if [ "$quiet" != "-Q" ]
       then
-        squeue -u $(whoami)
+        squeue -u $USER
       fi
     else
       exit 1

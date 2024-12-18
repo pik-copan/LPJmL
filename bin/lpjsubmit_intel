@@ -192,7 +192,7 @@ EOF
   then
     if [ "$quiet" != "-q" ]
     then
-      llq -u $(whoami)
+      llq -u $USER
     fi
   else
     exit 1

@@ -73,7 +73,7 @@
   "residue_on_field" : { "id" : 8, "fmt" : "clm", "name" : "/p/projects/lpjml/input/MADRAT/residues_madrat_1850-2015_16bands.clm"},
 //  "sdate" : { "id" : 28,"fmt" : "clm", "name" : "/p/projects/lpjml/input/historical/input_VERSION2/sdate_combined_filled.clm"}, /* insert prescribed sdate file name here */
   "sdate" : { "id" : 28,"fmt" : "clm", "name" : "ISIMIP3a/sdate_24_bands.clm"},
-  "crop_phu" : {"fmt" : "clm", "name" : "ISIMIP3av2/phusum_gswp3-w5e5_obsclim_24_bands_annual_1901-2019.clm"},
+  "crop_phu" : { "id" : 45, "fmt" : "clm", "name" : "ISIMIP3av2/phusum_gswp3-w5e5_obsclim_24_bands_annual_1901-2019.clm"},
   //"landuse" :      { "id" : 6, "fmt" : "clm",  "name" : "input_VERSION2/cft1700_2005_irrigation_systems_64bands.bin"},
   //"fertilizer_nr" : { "id" : 18, "fmt" : "clm",  "name" : "input_VERSION2/fertilizer_ggcmi.clm2"},
   "grass_harvest_options" : { "id" : 31, "fmt" : "raw", "name": "/p/projects/landuse/users/rolinski/Newinput/scenario_MO2.bin"},
