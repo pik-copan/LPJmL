@@ -18,7 +18,7 @@
 
 /* List of input data streams */
 
-#define N_IN 25         /* Number of available input data streams */
+#define N_IN 100         /* Number of available input data streams */
 
 #define CLOUD_DATA 0
 #define TEMP_DATA 1

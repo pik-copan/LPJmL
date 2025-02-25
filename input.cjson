@@ -29,10 +29,10 @@
   "lwnet" :       { "id" : 4, "fmt" : "clm",  "name" : "DUMMYLOCATION"},
   "lwdown" :       { "id" : 43, "fmt" : "clm",  "name" : "DUMMYLOCATION"},
   "swdown" :       { "id" : 3, "fmt" : "clm",  "name" : "DUMMYLOCATION"},
-  "cloud" : { "fmt" : "cdf", "var" : "cloud", "name" : "/p/projects/biodiversity/cru_netcdf/cru_ts_3_10.1901.2009.cld.nc"},
-  "wind" : { "fmt" : "cdf", "var" : "windspeed", "name" : "/p/projects/biodiversity/cru_netcdf/mwindspeed_1860-2100_67420.nc"},
-  "tamp" : { "fmt" : "cdf", "var" : "tamp", "name" : "/p/projects/biodiversity/cru_netcdf/cru_ts_3_10.1901.2009.dtr.nc"}, /* diurnal temp. range */
-  "wetdays" : { "fmt" : "cdf", "var" : "wet", "name" : "cru_netcdf/gpcc_cru09_wet_monthly_1901_2009.nc"},
+  "cloud" : { "id" : 0, "fmt" : "cdf", "var" : "cloud", "name" : "/p/projects/biodiversity/cru_netcdf/cru_ts_3_10.1901.2009.cld.nc"},
+  "wind" : { "id" : 15, "fmt" : "cdf", "var" : "windspeed", "name" : "/p/projects/biodiversity/cru_netcdf/mwindspeed_1860-2100_67420.nc"},
+  "tamp" : { "id" : 11, "fmt" : "cdf", "var" : "tamp", "name" : "/p/projects/biodiversity/cru_netcdf/cru_ts_3_10.1901.2009.dtr.nc"}, /* diurnal temp. range */
+  "wetdays" : { "id" : 12, "fmt" : "cdf", "var" : "wet", "name" : "cru_netcdf/gpcc_cru09_wet_monthly_1901_2009.nc"},
 #else /*  Default from GSWP3 W5E5 */
   "temp" :         { "id" : 1, "fmt" : "clm",  "name" : "ISIMIP3av2/obsclim/GSWP3-W5E5/tas_gswp3-w5e5_obsclim_1901-2019.clm"},
   "prec" :         { "id" : 2, "fmt" : "clm",  "name" : "ISIMIP3av2/obsclim/GSWP3-W5E5/pr_gswp3-w5e5_obsclim_1901-2019.clm"},

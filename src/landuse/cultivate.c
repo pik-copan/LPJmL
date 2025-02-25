@@ -41,6 +41,9 @@ Stocks cultivate(Cell *cell,           /**< cell pointer */
   Real manure;
   Real fertil;
   Real landfrac;
+  int nirrig,index=-1;
+  nirrig=getnirrig(ncft,config);
+
 #ifdef IMAGE
   int nagr,s;
   Stand *stand;
@@ -58,6 +61,7 @@ Stocks cultivate(Cell *cell,           /**< cell pointer */
     landfrac=max(setasidestand->frac-nagr*1e-7,1e-8);
   }
 #endif
+
   if(landfrac>=setasidestand->frac-epsilon)
   {
     setasidestand->type->freestand(setasidestand);
@@ -86,6 +90,9 @@ Stocks cultivate(Cell *cell,           /**< cell pointer */
   data->irrigation= (config->irrig_scenario==ALL_IRRIGATION) || irrigation;
   set_irrigsystem(cropstand,cft,npft,ncft,config);
   pft=addpft(cropstand,config->pftpar+npft+cft,year,day,config);
+  // index=(cropstand->type->landusetype==OTHERS) ? data->irrigation*nirrig+rothers(ncft) : pft->par->id-npft+data->irrigation*nirrig;
+  index=(pft->stand->type->landusetype==OTHERS) ? rothers(ncft) : pft->par->id-npft;
+  index+=data->irrigation*nirrig;
   phen_variety(pft,vern_date20,cell->coord.lat,day,wtype,npft,ncft,config);
   bm_inc.carbon=pft->bm_inc.carbon*cropstand->frac;
   bm_inc.nitrogen=pft->bm_inc.nitrogen*cropstand->frac;
@@ -110,6 +117,7 @@ Stocks cultivate(Cell *cell,           /**< cell pointer */
     cropstand->soil.NH4[0] += fertil*(1 - param.nfert_no3_frac)*param.nfert_split_frac;
     cell->balance.influx.nitrogen += fertil*param.nfert_split_frac*cropstand->frac;
     getoutput(&cell->output,NFERT_AGR,config)+=fertil*param.nfert_split_frac*cropstand->frac;
+    getoutputindex(&cell->output,CFT_NFERT,index,config)+=fertil*param.nfert_split_frac;
     getoutput(&cell->output,NAPPLIED_MG,config)+=fertil*param.nfert_split_frac*cropstand->frac;
     /* store remainder of fertilizer for second application */
     crop = pft->data;

@@ -91,6 +91,9 @@ Real daily_agriculture_grass(Stand *stand,                /**< stand pointer */
   if (!config->river_routing)
     irrig_amount(stand,data,npft,ncft,month,config);
 
+  nnat=getnnat(npft,config);
+  index=agtree(ncft,config->nwptype)+data->pft_id-npft+config->nagtree+data->irrigation*getnirrig(ncft,config);
+
   for (l = 0; l < LASTLAYER; l++)
     aet_stand[l] = green_transp[l] = 0;
   if (config->with_nitrogen && stand->cell->ml.fertilizer_nr!=NULL) /* has to be adapted if fix_fertilization option is added */
@@ -102,6 +105,7 @@ Real daily_agriculture_grass(Stand *stand,                /**< stand pointer */
       stand->soil.NH4[0]+=fertil*(1-param.nfert_no3_frac);
       stand->cell->balance.influx.nitrogen+=fertil*stand->frac;
       getoutput(output,NFERT_AGR,config)+=fertil*stand->frac;
+      getoutputindex(output,CFT_NFERT,index,config)+=fertil;
       getoutput(output,NAPPLIED_MG,config)+=fertil*stand->frac;
     } /* end fday==day */
   }
@@ -124,9 +128,6 @@ Real daily_agriculture_grass(Stand *stand,                /**< stand pointer */
   rainmelt = climate->prec + melt;
   if (rainmelt < 0)
     rainmelt = 0.0;
-
-  nnat=getnnat(npft,config);
-  index=agtree(ncft,config->nwptype)+data->pft_id-npft+config->nagtree+data->irrigation*getnirrig(ncft,config);
 
   if (data->irrigation && data->irrig_amount > epsilon)
   {

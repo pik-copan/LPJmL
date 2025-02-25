@@ -122,6 +122,8 @@ Real daily_grassland(Stand *stand,                /**< stand pointer */
   if(!config->river_routing)
     irrig_amount(stand,&data->irrigation,npft,ncft,month,config);
 
+  index=data->irrigation.irrigation*getnirrig(ncft,config)+(stand->type->landusetype==GRASSLAND ? rmgrass(ncft) : rothers(ncft));
+
   for(l=0;l<LASTLAYER;l++)
     aet_stand[l]=green_transp[l]=0;
   if (config->with_nitrogen && (stand->type->landusetype==GRASSLAND  || stand->type->landusetype==OTHERS))
@@ -136,6 +138,8 @@ Real daily_grassland(Stand *stand,                /**< stand pointer */
         stand->cell->balance.influx.nitrogen+=fertil*stand->frac;
         if(stand->type->landusetype==OTHERS)
           getoutput(output,NFERT_AGR,config)+=fertil*stand->frac;
+        
+        getoutputindex(output,CFT_NFERT,index,config)+=fertil;
         getoutput(output,NAPPLIED_MG,config)+=fertil*stand->frac;
       } /* end fday==day */
     }
@@ -160,8 +164,6 @@ Real daily_grassland(Stand *stand,                /**< stand pointer */
   rainmelt=climate->prec+melt;
   if(rainmelt<0)
     rainmelt=0.0;
-
-  index=data->irrigation.irrigation*getnirrig(ncft,config)+(stand->type->landusetype==GRASSLAND ? rmgrass(ncft) : rothers(ncft));
 
   if(data->irrigation.irrigation && data->irrigation.irrig_amount>epsilon)
   {

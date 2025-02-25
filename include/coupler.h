@@ -23,7 +23,7 @@
 #define LPJCOUPLEDHOST "LPJCOUPLEDHOST"  /* Environment variable for coupled host */
 #define LPJWAIT "LPJWAIT"                /* Time to wait for connection */
 #define DEFAULT_COUPLED_HOST "localhost" /* Default host for coupled model */
-#define DEFAULT_COUPLER_PORT 2224        /* Default port for in and outgoing connection */
+#define DEFAULT_COUPLER_PORT 2042        /* Default port for in and outgoing connection */
 #define DEFAULT_WAIT 0                   /* Default time to wait for connection */
 
 #define COUPLER_OK 0                     /* coupler status ok */

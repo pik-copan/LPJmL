@@ -308,6 +308,7 @@ ID                               Fmt                        filename
     { "id" : "wateramount",      "file" : { "name" : "output/mwateramount"}},
     { "id" : "harvestc",         "file" : { "name" : "output/flux_harvest"}},
     { "id" : "sdate",            "file" : { "name" : "output/sdate"}},
+    { "id" : "hdate",            "file" : { "name" : "output/hdate"}},
     { "id" : "pft_harvestc",     "file" : { "name" : mkstr(output/pft_harvest.SUFFIX)}},
     { "id" : "cftfrac",          "file" : { "name" : "output/cftfrac"}},
     { "id" : "seasonality",      "file" : { "name" : "output/seasonality"}},
